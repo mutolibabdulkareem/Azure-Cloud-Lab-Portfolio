@@ -18,11 +18,11 @@ resource "azurerm_subnet" "subnet1" {
   address_prefixes     = ["10.0.1.0/24"]
 }
 
-resource "azurerm_subnet" "subnet2" {
-  name                 = "application-subnet"
+resource "azurerm_subnet" "bastion_subnet" {
+  name                 = "AzureBastionSubnet"
   resource_group_name  = azurerm_resource_group.Secure-Lab-RG.name
   virtual_network_name = azurerm_virtual_network.V-net1.name
-  address_prefixes     = ["10.0.2.0/24"]
+  address_prefixes     = ["10.0.3.0/24"]
 }
 
 #network interface for the VM
@@ -77,7 +77,7 @@ resource "azurerm_network_security_group" "NSG1" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "3389"
-    source_address_prefix      = "my-IP address"
+    source_address_prefix      = "196.6.205.169"
     destination_address_prefix = "*"
   }
 
