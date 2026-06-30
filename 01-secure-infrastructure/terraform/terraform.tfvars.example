@@ -1,0 +1,5 @@
+location        = "West Europe"
+admin_ip        = "admin_ip"
+admin_username  = "admin_username"
+admin_password  = "Your_Strong_Password"
+vm_size         = "Standard_B2s"
